@@ -1,7 +1,9 @@
 package com.sant.santpt.database.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 
 import java.math.BigInteger;
@@ -18,12 +20,11 @@ public class RequiredRemainderCalc {
     @Column(nullable = false)
     private Long id;
 
-    @NotBlank(message = "x is mandatory")
+    @Min(value = 0L, message = "x value must be positive")
     private BigInteger x;
-    @NotBlank(message = "y is mandatory")
+    @Min(value = 0L, message = "y value must be positive")
     private BigInteger y;
-    @NotBlank(message = "n is mandatory")
+    @Min(value = 0L, message = "n value must be positive")
     private BigInteger n;
-    @NotBlank(message = "result is mandatory")
     private BigInteger result;
 }

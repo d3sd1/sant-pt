@@ -19,6 +19,9 @@ public class RequiredRemainderService {
      * Compeljidad algorítmica de O(log n). Realiza lo solicitado en: https://codeforces.com/problemset/problem/1374/A
      */
     public BigInteger calculate(BigInteger x, BigInteger y, BigInteger n) {
+        if (x.signum() == -1 || y.signum() == -1 || n.signum() == -1) {
+            throw new NumberFormatException("x, y and n must be positive.");
+        }
         log.trace("Executing calculations on remainder.");
         final BigInteger z = n.mod(x);
         if (z.compareTo(y) > 0) {

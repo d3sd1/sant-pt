@@ -37,14 +37,17 @@ docker-compose up
 - se agrega mapstruct para realizar el mapping dto/entidad automatico
 - se utiliza spring jpa con h2 para no tener dependencias de bbdd. se utiliza la estrategia automatica para no saturar de trabajo, no obstante lo suyo seria utilizar liquibase para la versionizacion de la bbdd
 - para logear info se utiliza la dependencia @Slf4j automatizada. en los logs nunca se ponen variables para evitar hacking por trazas.
-- 
+- para los tests iba a utilizar mockito pero no hizo falta
+- se prueba solo la capa controller ya que esta hereda los servicios etc. y los prueba a la vez. menos tests con misma cobertura siempre es mejor. se entrega el proyecto con un >80% de cobertura (escaneado por sonarqube en local)
+- se prueba un caso limite de cada, no tiene sentido lanzar todas las pruebas de codeforces ya que muchas son del mismo tipo (numeros pequeños, mismos corner case...).
+- en el front no se agregan pruebas por falta de tiempo, pero si es necesario se pueden implemenbtar sin problema si se solicita
+- en el front no se agrega estilo por falta de tiempo, no tiene que quedar bonito sino funcionar. si es un problema, se puede poner mas "bonito" (que es algo relativo)
+- el front pretende ser simple y un extra... es cutre salchichero, pero muestra lo que tiene que mostrar
+- NO SE IMPLEMENTA AUTH por tiempo. no lo considero necesario y esto podria implementarse en directo (que asi se demuestran mas cosas). se podria hacer plano con un jwt, con un oauth como keycloack, centralizado como ldap, etc....
 
 # Como acceder a la api
 URL: http://localhost:8080
 Swagger: http://localhost:8080/swagger-ui/index.html
 
-
-#todo
-sonar?=
-çoipenapi?
-docker?
+# Como lanzar pruebas
+mvn test
