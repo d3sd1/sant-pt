@@ -34,7 +34,15 @@ docker-compose up
 - no se utilizan smart commits para el repositorio y apenas se realizan commit. no es buena praxis, pero dado que no es el objeto de la prueba, no he puesto mucho enfasis
 - no se agrega ci/cd por limitacion de tiempo
 - no se agrega reporte de sonarqube por limitacion de tiempo
+- se agrega mapstruct para realizar el mapping dto/entidad automatico
+- se utiliza spring jpa con h2 para no tener dependencias de bbdd. se utiliza la estrategia automatica para no saturar de trabajo, no obstante lo suyo seria utilizar liquibase para la versionizacion de la bbdd
+- para logear info se utiliza la dependencia @Slf4j automatizada. en los logs nunca se ponen variables para evitar hacking por trazas.
 - 
+
+# Como acceder a la api
+URL: http://localhost:8080
+Swagger: http://localhost:8080/swagger-ui/index.html
+
 
 #todo
 sonar?=
