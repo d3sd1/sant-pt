@@ -31,6 +31,9 @@ docker-compose up
 - la validacion de datos se realiza por spring validation y spring rest
 - la gestion de errores se realiza por la capa advisor, a fin de aunar los errores y estandarizarlos. try catch en el controlador es mala praxis.
 - no se usa autowired, sino inyeccion por constructor ya que permite usar constantes, mas rapido, mejor integridad de datos.
+- no se utilizan smart commits para el repositorio y apenas se realizan commit. no es buena praxis, pero dado que no es el objeto de la prueba, no he puesto mucho enfasis
+- no se agrega ci/cd por limitacion de tiempo
+- no se agrega reporte de sonarqube por limitacion de tiempo
 - 
 
 #todo
