@@ -10,12 +10,12 @@
 
 # Como ejecutar (e instalar dependencias iniciales), asumiendo sistema unix (adaptar a windows si es el caso)
 ## En host plano:
-cd backend
-mvn i
-mvn spring-boot:run
-cd ../frontend
-npm i
-npm run start
+- cd backend
+- mvn i
+- mvn spring-boot:run
+- cd ../frontend
+- npm i
+- npm run start
 
 ## Con docker:
 docker-compose up
